@@ -17,6 +17,7 @@ namespace OOP_4.Built_In_Interfaces
         {
 
         }
+
         public Employee(Employee employeeCopy)
         {
             this.Id = employeeCopy.Id;

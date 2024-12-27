@@ -99,6 +99,22 @@ namespace Demo
             Console.WriteLine($"Employee01==> {employee01}");
             Console.WriteLine($"Employee02==> {employee01}");
             #endregion
+
+            #region Video 8
+            Employee[] employees =
+            {
+                new Employee(){Id = 10, Name = "Ahmed" , Salary = 8_000},
+                new Employee(){Id = 20, Name = "Omnia" , Salary = 2_000},
+                new Employee(){Id = 30, Name = "Esraa" , Salary = 10_000},
+                new Employee(){Id = 40, Name = "Omar" , Salary = 9_000},
+            };
+
+            Array.Sort(employees);
+            foreach (Employee employee in employees)
+            {
+                Console.WriteLine(employee);
+            }
+            #endregion
         }
     }
 }
