@@ -1,9 +1,29 @@
 ﻿using OOP_4.Interface_Example_01;
+using OOP_4.Interface_Example_02;
 
 namespace Demo
 {
     internal class Program
     {
+
+
+        #region InterfaceEx02
+        static void PrintTenNumbersFromSeries(ISeries series)
+        {
+            if (series is null)
+                return;
+            for (int i = 0; i <= 10; i++)
+            {
+                Console.Write($"{series.current} \t");
+                series.GetNext();
+            }
+            series.Reset();
+            Console.WriteLine();
+        }
+
+        #endregion
+
+
         static void Main()
         {
             #region InterfaceEx01
@@ -17,9 +37,6 @@ namespace Demo
             referenceFromInterface.MyProperty = 20;
             referenceFromInterface.Print();
             #endregion
-
-
-
         }
     }
 }
