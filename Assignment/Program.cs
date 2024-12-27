@@ -1,10 +1,45 @@
-﻿using Assignment.Interface_01;
+﻿using Assignment.First_Program;
+using Assignment.Interface_01;
 using Assignment.Interface_02;
 
 namespace Assignment
 {
     internal class Program
     {
+        #region Part 2
+
+        static Point3D ReadPoint()
+        {
+            int x, y, z;
+
+            Console.Write("X: ");
+            x = ReadInt();
+
+            Console.Write("Y: ");
+            y = ReadInt();
+
+            Console.Write("Z: ");
+            z = ReadInt();
+
+            return new Point3D(x, y, z);
+        }
+
+        static int ReadInt()
+        {
+            string input;
+            int result;
+
+            while (true)
+            {
+                input = Console.ReadLine();
+                if (int.TryParse(input, out result))
+                {
+                    return result;
+                }
+                Console.WriteLine("Invalid input. Please enter an integer.");
+            }
+        }
+        #endregion
         static void Main(string[] args)
         {
             #region Q1
@@ -49,6 +84,38 @@ namespace Assignment
             pushService.SendNotification("DeviceToken1764", "You have a new alert.");
             #endregion
 
+            #region Part 2 
+            Console.WriteLine("Enter coordinates for Point P1:");
+            Point3D P1 = ReadPoint();
+
+            Console.WriteLine("Enter coordinates for Point P2:");
+            Point3D P2 = ReadPoint();
+
+            Console.WriteLine(P1);
+            Console.WriteLine(P2);
+
+            Console.WriteLine($"Are P1 and P2 equal? {(P1 == P2 ? "Yes" : "No")}");
+
+            Point3D[] points = new Point3D[]
+            {
+            new Point3D(5, 2, 3),
+            new Point3D(1, 4, 2),
+            new Point3D(3, 3, 5),
+            new Point3D(2, 1, 4),
+            };
+
+            Array.Sort(points);
+            Console.WriteLine("\nSorted Points:");
+            foreach (var point in points)
+            {
+                Console.WriteLine(point);
+            }
+
+            Point3D clonedP1 = (Point3D)P1.Clone();
+            Console.WriteLine($"\nCloned P1: {clonedP1}");
+            #endregion
+
         }
+
     }
 }
