@@ -24,5 +24,14 @@ namespace OOP_4.Operators_Overloading
         {
             return $"{Real} + {Imag}i";
         }
+
+        public static Complex operator ++(Complex C)
+        {
+            return new Complex()
+            {
+                Real = (C?.Real ?? 0) + 1,
+                Imag = (C?.Imag ?? 0)
+            };
+        }
     }
 }
