@@ -1,4 +1,5 @@
-﻿using OOP_4.Interface_Example_01;
+﻿using OOP_4.Inteface_Example_03;
+using OOP_4.Interface_Example_01;
 using OOP_4.Interface_Example_02;
 
 namespace Demo
@@ -36,6 +37,13 @@ namespace Demo
             referenceFromInterface.MyFuntion();
             referenceFromInterface.MyProperty = 20;
             referenceFromInterface.Print();
+            #endregion
+
+            #region InterfaceEx03
+            IMovable movable = new Airplane();
+            movable.Forward();
+            IFlyable flyable = new Airplane();
+            flyable.Forward();
             #endregion
         }
     }
