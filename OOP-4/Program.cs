@@ -115,6 +115,28 @@ namespace Demo
                 Console.WriteLine(employee);
             }
             #endregion
+
+            #region Video 9
+            Employee[] employees =
+            {
+                                new Employee(){Id = 40, Name = "Ahmed" , Salary = 8_000},
+                new Employee(){Id = 10, Name = "Omnia" , Salary = 2_000},
+                new Employee(){Id = 20, Name = "Mostafa" , Salary = 10_000},
+                new Employee(){Id = 30, Name = "Omar" , Salary = 9_000},
+
+            };
+
+
+            Array.Sort(employees, new EmployeeComparer());
+            foreach (Employee employee in employees)
+            {
+                Console.WriteLine(employee);
+            }
+            int[] Numebrs = [9, 2, 5, 6, 7, 1, 3, 8];
+            Array.Sort(Numebrs, new intComparer());
+            foreach (int number in Numebrs)
+                Console.WriteLine(number);
+            #endregion
         }
     }
 }
