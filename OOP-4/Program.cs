@@ -73,6 +73,16 @@ namespace Demo
             Console.WriteLine("");
             #endregion
 
+            #region Video 6
+            string[] Names01 = ["Amr", "Mona"];
+            string[] Names02 = ["Ahmed", "Yassmin"];
+            Console.WriteLine($"NAmes01.GetHashCode() : {Names01.GetHashCode()}");
+            Console.WriteLine($"NAmes02.GetHashCode() : {Names02.GetHashCode()}");
+            Names02 = (String[])Names01.Clone();
+            Console.WriteLine("After Deep Copy*");
+            Console.WriteLine($"NAmes01.GetHashCode() : {Names01.GetHashCode()}");
+            Console.WriteLine($"NAmes02.GetHashCode() : {Names02.GetHashCode()}");
+            #endregion
         }
     }
 }
