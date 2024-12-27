@@ -1,4 +1,5 @@
 ﻿using Assignment.Interface_01;
+using Assignment.Interface_02;
 
 namespace Assignment
 {
@@ -31,6 +32,21 @@ namespace Assignment
             {
                 Console.WriteLine($"User '{username}' is not authorized as '{role}'.");
             }
+            #endregion
+
+            #region Q2
+            INotificationService emailService = new EmailNotificationService();
+            INotificationService smsService = new SmsNotificationService();
+            INotificationService pushService = new PushNotificationService();
+
+            emailService.PrintNotificationType();
+            emailService.SendNotification("Mohab@Gmail.com", "Welcome to our service!");
+
+            smsService.PrintNotificationType();
+            smsService.SendNotification("01272501297", "Your OTP is 12356.");
+
+            pushService.PrintNotificationType();
+            pushService.SendNotification("DeviceToken1764", "You have a new alert.");
             #endregion
 
         }
